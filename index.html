@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stangr Bitter | Rewolucja na bazie oleju kawowego</title>
+    <meta name="description" content="Innowacyjny bitter barmański na bazie oleju kawowego. Zobacz prototyp od Stangr Bitter.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Stangr <span>Bitter</span></div>
+            <a href="#contact" class="btn-outline">Współpraca</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content fade-in-up">
+            <span class="badge">Faza R&D</span>
+            <h1>Nowy wymiar<br><i>Głębi</i></h1>
+            <p>Odkryj prototypowy bitter barmański na bazie oleju kawowego. Stworzony dla barmanów z pasją i wyobraźnią.</p>
+            <a href="#contact" class="btn-primary">Skontaktuj się z nami</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-text scroll-reveal">
+                <h2>Sztuka i nauka w jednej kropli</h2>
+                <p>Jesteśmy startupem w fazie R&D, tworzącym unikalny bitter. Zamiast tradycyjnych baz, wykorzystujemy innowacyjny proces ekstrakcji i olej kawowy. Wynik? Aksamitna tekstura, głęboki profil smakowy i aromat, który rewolucjonizuje klasyczne koktajle jak Old Fashioned czy Negroni.</p>
+                <p class="highlight-text">Tworzymy z myślą o nowoczesnych barach, zachowując szacunek do klasycznej sztuki barmańskiej.</p>
+            </div>
+            
+            <!-- Image -->
+            <div class="about-image-container scroll-reveal delay">
+                <img src="logo.jpg" alt="Stangr Bitter Logo" class="about-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container scroll-reveal">
+            <h2>Zostań częścią rewolucji</h2>
+            <p>Szukamy właścicieli barów i barmanów chętnych do ekskluzywnych testów naszego prototypu. Zostaw nam wiadomość, a odezwiemy się najszybciej jak to możliwe.</p>
+            
+            <div class="email-frame">
+                <div class="email-content">
+                    <h3>Napisz do nas</h3>
+                    <a href="mailto:szymon@stangr.pl" class="email-link">szymon@stangr.pl</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Stangr <span>Bitter</span></div>
+            <p>&copy; 2026 Stangr Bitter. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <!-- Simple Interactivity Script -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
